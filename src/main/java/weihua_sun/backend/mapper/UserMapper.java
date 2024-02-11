@@ -1,6 +1,6 @@
 package weihua_sun.backend.mapper;
 
-import weihua_sun.backend.model.User;
+import weihua_sun.backend.model.domain.User;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**
