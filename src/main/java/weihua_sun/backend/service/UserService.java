@@ -10,8 +10,10 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @createDate 2024-02-07 22:19:23
  */
 public interface UserService extends IService<User> {
+
+
     /**
-     * 用户注释
+     * 用户注册
      *
      * @param userAccount   用户账户
      * @param userPassword  用户密码
@@ -28,6 +30,12 @@ public interface UserService extends IService<User> {
      * @param request
      * @return 脱敏后的用户信息
      */
-    User doLogin(String userAccount, String userPassword, HttpServletRequest request);
+    User userLogin(String userAccount, String userPassword, HttpServletRequest request);
 
+    /**
+     * 用户脱敏 防止敏感信息泄露
+     * @param originUser
+     * @return
+     */
+    User getSafetyUser(User originUser);
 }

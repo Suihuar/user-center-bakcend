@@ -18,7 +18,7 @@ class UserServiceTest {
         user.setUserAccount("123");
         user.setAvatarUrl("https://c-ssl.dtstatic.com/uploads/blog/202208/01/20220801204309_f6dd8.thumb.400_0.jpeg");
         user.setGender(1);
-        user.setUserPassword("xxx");
+        user.setUserPassword("12345678");
         user.setContactNumber("123");
         user.setUserEmail("456");
         boolean result = userService.save(user);
@@ -38,8 +38,9 @@ class UserServiceTest {
         result = userService.userRegister(userAccount,userPassword,checkPassword);
         Assertions.assertEquals(-1,result);
 
-        userAccount = "suihuar";
+        userAccount = "nihaoblabla";
         userPassword = "12345678";
+        checkPassword = "12345678";
         result = userService.userRegister(userAccount,userPassword,checkPassword);
         Assertions.assertEquals(-1,result);
 
